@@ -1,4 +1,4 @@
 # CMS-and-Shopping-Cart
-A CMS and Shopping Cart website with security and RESTful API and a REST client that consumer the API
+A CMS and Shopping Cart website with security and RESTful API and a REST client that consumer the API <br/>
 Technologies
 Spring Spring Boot Thymeleaf Spring Security Spring Data Jpa
