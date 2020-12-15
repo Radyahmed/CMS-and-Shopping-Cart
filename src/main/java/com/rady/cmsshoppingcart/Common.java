@@ -1,5 +1,6 @@
 package com.rady.cmsshoppingcart;
 
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.List;
 
@@ -25,9 +26,12 @@ public class Common {
 	private CategoryRepository categoryRepository;
 
 	@ModelAttribute
-	public void shareDate(Model model, HttpSession session) {
+	public void shareDate(Model model, HttpSession session, Principal principal) {
+		if (principal != null) {
+			model.addAttribute("principal", principal.getName());
+		}
 		List<Page> pages = pageRepository.findAllByOrderBySortingAsc();
-		List<Category> categories = categoryRepository.findAll();
+		List<Category> categories = categoryRepository.findAllByOrderBySortingAsc();
 		boolean cartActive = false;
 
 		if (session.getAttribute("cart") != null) {

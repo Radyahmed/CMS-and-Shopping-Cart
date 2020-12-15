@@ -23,6 +23,12 @@ public class pagesController {
 		return "page";
 	}
 
+	@GetMapping("/login")
+	public String login() {
+
+		return "login";
+	}
+
 	@GetMapping("/{slug}")
 	public String page(@PathVariable String slug, Model model) {
 		Page page = pageRepository.findBySlug(slug);
